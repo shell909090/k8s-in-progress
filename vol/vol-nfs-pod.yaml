@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vol-nfs
+spec:
+  containers:
+  - name: deb
+    image: debian
+    command:
+      - /bin/sleep
+    args:
+      - "1000000"
+    volumeMounts:
+    - name: srv
+      mountPath: /srv
+  volumes:
+  - name: srv
+    nfs:
+      path: /srv/nfs
+      server: 192.168.33.51

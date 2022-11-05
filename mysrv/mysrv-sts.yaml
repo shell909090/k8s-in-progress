@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysrv
+  labels:
+    app: mysrv
+spec:
+  serviceName: "mysrv"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysrv
+  template:
+    metadata:
+      labels:
+        app: mysrv
+    spec:
+      containers:
+      - name: mysrv
+        image: hub.base.domain/mysrv:latest
+        ports:
+        - name: web
+          containerPort: 80
+        volumeMounts:
+        - name: www
+          mountPath: /mnt
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      storageClassName: nfs-client
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apt
+  namespace: default
+data:
+  98proxy: |
+    Acquire::http::Proxy "http://192.168.33.81:8118/";
+  sources.list: |
+    deb http://ftp.cn.debian.org/debian/ bullseye main
+    deb http://security.debian.org/debian-security bullseye-security main
+    deb http://ftp.cn.debian.org/debian/ bullseye-updates main

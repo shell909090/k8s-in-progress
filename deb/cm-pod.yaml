@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: deb
+spec:
+  containers:
+  - name: deb
+    image: debian
+    command:
+      - /bin/sleep
+    args:
+      - "1000000"
+    volumeMounts:
+    - name: apt
+      mountPath: /etc/apt/sources.list
+      subPath: sources.list
+      readOnly: true
+    - name: apt
+      mountPath: /etc/apt/apt.conf.d/98proxy
+      subPath: 98proxy
+      readOnly: true
+  volumes:
+  - name: apt
+    configMap:
+      name: apt
