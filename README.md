@@ -12,6 +12,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 * calico: [calico CNI的安装，配置，和抓包](calico/README.md)。
 * k8s.md: [k8s相关文档](k8s.md)
 * minikube.md: [minikube相关文档](minikube.md)
+* sched: [调度测试](sched/README.md)。
 * deb: 基础镜像的定义
   * apt: 里面放了两个基础文件，`proxy`和`sources.list`。允许动态升级系统。
   * apt-cm-create.sh: 使用apt目录生成对应configmap。
@@ -54,11 +55,6 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
   * Makefile: `make all`编译到推送镜像。
   * mysrv-sts.yaml: 部署statefulset。
   * mysrv-svc.yaml: svc文件。
-* sched: 调度测试有关文件。
-  * metrics-server.yaml: 实际上是 https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml 。
-  * req-high-pod.yaml: 要求比较高的pod。1C1G。
-  * req-low-pod.yaml: 要求比较低的pod。200m CPU + 100m MEM。
-  * req-impossible-pod.yaml: 做不到的pod。5C5G。（我穷）
 * sec-ctx: 安全隔离有关的文件。具体看`k8s in action`第十三章。
   * file-pod.yaml: 容器内访问主机文件。
   * net-pod.yaml: 容器内访问主机网络（hostNetwork）。

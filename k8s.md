@@ -71,3 +71,8 @@ ETCDCTL_API=3 bin/etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/k
 ## controller是啥？
 
 监听某个对象的改变，然后跟着调整其他对象。例如deploy的controller，监听deploy的改变事件，并且创建rs对象，滚动。
+
+# CNI对比
+
+* https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
+* https://kubernetes.io/docs/concepts/cluster-administration/networking/
