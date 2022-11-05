@@ -8,6 +8,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 
 * install-k8s.md: [安装k8s](install-k8s.md)
 * install-nfs.md: [安装nfs](install-nfs.md)
+* install-registry.md: [安装registry](install-registry.md)
 * calico: calico CNI的安装，配置，和抓包。
   * calico.yaml: `wget https://docs.projectcalico.org/manifests/calico.yaml`
   * default-ipv4-ippool-bgp.yaml: bgp模式的配置，所有node需要在同一个大二层里。（或是网关bgp打通）
@@ -66,28 +67,6 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
   * net-pod.yaml: 容器内访问主机网络（hostNetwork）。
   * pid-pod.yaml: 容器内访问主机PID空间。（ps可见列表）
   * priv-pod.yaml: 容器内拥有特权。
-
-# registry
-
-推荐使用registry创建。
-
-```
-$ docker pull registry:2
-$ docker run -d --name reg --restart=always -p 5000:5000 -v ~/docker/registry:/var/lib/registry registry:2
-```
-
-注意几点：
-
-* registry好用难管理。推荐操作是把需要的image推上去。不用了直接把上面那个存储目录全删干净重新推。
-* `ip:5000`不大好用，我做了`https://domain/`到`ip:5000`的转发。
-
-几个常见操作。
-
-* list catalogs: `curl https://hub.base.domain/v2/_catalog`
-* list tags: `curl https://hub.base.domain/v2/<name>/tags/list`
-* list manifest: `curl -s -H 'Accept: application/vnd.docker.distribution.manifest.v2+json' https://hub.base.domain/v2/<name>/manifests/<tag> | jq -r '.config.digest'`
-* delete: `curl -s -H "Accept: application/vnd.docker.distribution.manifest.v2+json" -X DELETE https://hub.base.domain/v2/<name>/manifests/<id>`
-* gc: `docker exec registry bin/registry garbage-collect --dry-run /etc/docker/registry/config.yml`
 
 # Kubernetes Metrics Server
 
