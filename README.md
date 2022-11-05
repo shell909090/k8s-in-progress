@@ -7,6 +7,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 # 分目录作用解释
 
 * install-k8s.md: [安装k8s](install-k8s.md)
+* install-nfs.md: [安装nfs](install-nfs.md)
 * calico: calico CNI的安装，配置，和抓包。
   * calico.yaml: `wget https://docs.projectcalico.org/manifests/calico.yaml`
   * default-ipv4-ippool-bgp.yaml: bgp模式的配置，所有node需要在同一个大二层里。（或是网关bgp打通）
@@ -65,12 +66,6 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
   * net-pod.yaml: 容器内访问主机网络（hostNetwork）。
   * pid-pod.yaml: 容器内访问主机PID空间。（ps可见列表）
   * priv-pod.yaml: 容器内拥有特权。
-
-# Kubernetes NFS Subdir External Provisioner
-
-使用一个nfs服务器，创建多个pv来支撑多个pvc的工具。文件参考`nfs-subdir-external-provisioner`目录。
-
-具体看[Kubernetes NFS Subdir External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner)。
 
 # registry
 

@@ -61,18 +61,3 @@ version = 2
 
 1. [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 2. [Easy steps to install Calico CNI on Kubernetes Cluster](https://www.golinuxcloud.com/calico-kubernetes/)
-
-## 搭建nfs
-
-* https://wiki.debian.org/NFSServerSetup
-* open port 111,2049 in both TCP and UDP
-* `apt install nfs-kernel-server`
-* /etc/exports
-  * /srv/nfs	192.168.33.0/24(rw,no_root_squash,no_subtree_check)
-* /etc/hosts.allow
-  * portmap: 192.168.33.
-* `exportfs -a`
-* `systemctl restart nfs-server`
-* test from client
-  * `aptitude install -y nfs-common`
-  * `sudo mount 192.168.33.45:/srv/nfs nfs/`
