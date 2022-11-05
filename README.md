@@ -4,17 +4,12 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 
 推荐去看一遍k8s in action。基础。
 
-# 分目录作用解释
+# 目录结构和作用解释
 
 * install-k8s.md: [安装k8s](install-k8s.md)
 * install-nfs.md: [安装nfs](install-nfs.md)
 * install-registry.md: [安装registry](install-registry.md)
-* calico: calico CNI的安装，配置，和抓包。
-  * calico.yaml: `wget https://docs.projectcalico.org/manifests/calico.yaml`
-  * default-ipv4-ippool-bgp.yaml: bgp模式的配置，所有node需要在同一个大二层里。（或是网关bgp打通）
-  * default-ipv4-ippool-ipip.yaml: ipip模式的配置，可以跨越网关。
-  * default-ipv4-ippool-vxlan.yaml: vxlan模式的配置。同样进行封装，使用vxlan协议，而非ipip协议。
-  * calico-*.pcap: 三种模式的抓包结果。
+* calico: [calico CNI的安装，配置，和抓包](calico/README.md)。
 * deb: 基础镜像的定义
   * apt: 里面放了两个基础文件，`proxy`和`sources.list`。允许动态升级系统。
   * apt-cm-create.sh: 使用apt目录生成对应configmap。
