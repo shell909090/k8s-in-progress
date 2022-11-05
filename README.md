@@ -6,6 +6,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 
 # 分目录作用解释
 
+* install-k8s.md: [安装k8s](install-k8s.md)
 * calico: calico CNI的安装，配置，和抓包。
   * calico.yaml: `wget https://docs.projectcalico.org/manifests/calico.yaml`
   * default-ipv4-ippool-bgp.yaml: bgp模式的配置，所有node需要在同一个大二层里。（或是网关bgp打通）
