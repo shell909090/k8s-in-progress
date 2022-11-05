@@ -50,3 +50,24 @@ node上需要自己装一个git/nfs-common。
 * cluster.local
 
 集群IP指向kube-dns或者core-dns。两者从apiserver获得所有信息，更新。
+
+## 如何使用etcdctl连接k8s的etcd看数据？
+
+参考这里: [使用 etcdctl 访问 Kubernetes 数据](https://jimmysong.io/kubernetes-handbook/guide/using-etcdctl-to-access-kubernetes-data.html)
+
+```
+ETCDCTL_API=3 etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+  --cert=/etc/kubernetes/pki/etcd/peer.crt \
+  --key=/etc/kubernetes/pki/etcd/peer.key \
+  get /registry/namespaces/default -w=json | jq .
+```
+
+## etcd的容量查询？
+
+```
+ETCDCTL_API=3 bin/etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key endpoint status --write-out=table
+```
+
+## controller是啥？
+
+监听某个对象的改变，然后跟着调整其他对象。例如deploy的controller，监听deploy的改变事件，并且创建rs对象，滚动。
