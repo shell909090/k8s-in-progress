@@ -9,8 +9,9 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 * install-k8s.md: [安装k8s](install-k8s.md)
 * install-nfs.md: [安装nfs](install-nfs.md)
 * install-registry.md: [安装registry](install-registry.md)
-* k8s.md: [k8s相关文档](k8s.md)
 * calico: [calico CNI的安装，配置，和抓包](calico/README.md)。
+* k8s.md: [k8s相关文档](k8s.md)
+* minikube.md: [minikube相关文档](minikube.md)
 * deb: 基础镜像的定义
   * apt: 里面放了两个基础文件，`proxy`和`sources.list`。允许动态升级系统。
   * apt-cm-create.sh: 使用apt目录生成对应configmap。
