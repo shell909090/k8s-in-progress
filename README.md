@@ -22,9 +22,3 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 * myapp: [myapp相关资源](myapp/)。myapp有版本无状态。
 * mysrv: [mysrv相关资源](mysrv/)。mysrv有状态无版本。
 * sec-ctx: [安全隔离有关的文件](sec-ctx/)。
-
-# Kubernetes Metrics Server
-
-metric server。部署后top开始工作，可以使用hpa。
-
-具体看[Kubernetes Metrics Server](https://github.com/kubernetes-sigs/metrics-server)。

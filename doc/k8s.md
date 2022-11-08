@@ -76,3 +76,9 @@ ETCDCTL_API=3 bin/etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/k
 
 * https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
 * https://kubernetes.io/docs/concepts/cluster-administration/networking/
+
+# Kubernetes Metrics Server
+
+metric server。部署后top开始工作，可以使用hpa。
+
+具体看[Kubernetes Metrics Server](https://github.com/kubernetes-sigs/metrics-server)。
