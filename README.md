@@ -11,6 +11,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 * install-registry.md: [安装registry](install-registry.md)
 * calico: [calico CNI的安装，配置，和抓包](calico/README.md)。
 * k8s.md: [k8s相关文档](k8s.md)
+* k8s-in-minimum.md: [最小化的k8s](k8s-in-minimum.md)
 * minikube.md: [minikube相关文档](minikube.md)
 * sched: [调度测试](sched/README.md)。
 * deb: 基础镜像的定义。
