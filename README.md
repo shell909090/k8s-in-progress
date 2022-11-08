@@ -6,20 +6,16 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 
 # 目录结构和作用解释
 
-* install-k8s.md: [安装k8s](install-k8s.md)
-* install-nfs.md: [安装nfs](install-nfs.md)
-* install-registry.md: [安装registry](install-registry.md)
+* doc: 文档有关
+  * install-k8s.md: [安装k8s](doc/install-k8s.md)
+  * install-nfs.md: [安装nfs](doc/install-nfs.md)
+  * install-registry.md: [安装registry](doc/install-registry.md)
+  * k8s.md: [k8s相关文档](doc/k8s.md)
+  * k8s-in-minimum.md: [最小化的k8s](doc/k8s-in-minimum.md)
+  * minikube.md: [minikube相关文档](doc/minikube.md)
 * calico: [calico CNI的安装，配置，和抓包](calico/README.md)。
-* k8s.md: [k8s相关文档](k8s.md)
-* k8s-in-minimum.md: [最小化的k8s](k8s-in-minimum.md)
-* minikube.md: [minikube相关文档](minikube.md)
 * sched: [调度测试](sched/README.md)。
-* deb: 基础镜像的定义。
-  * apt: 里面放了两个基础文件，`proxy`和`sources.list`。允许动态升级系统。
-  * apt-cm-create.sh: 使用apt目录生成对应configmap。
-  * apt-cm.yaml: 所生成的configmap。
-  * base-pod.yaml: 最基本的deb镜像定义的pod。
-  * cm-pod.yaml: 使用configmap定义的pod，加载了动态升级功能。
+* deb: [基础镜像有关的东西](deb/)
 * api: 目录内都是k8s api访问的例子。
   * ambassador.yaml: 两个containers，一个来自`luksa/kubectl-proxy`，一个是标准的debian。标准debian中，可使用curl访问本机8001端口，来访问k8s api而免去认证。具体参考`k8s in action`的`8.2.3`节。
   * curl-env.sh: 如何使用标准的curl来直接访问k8s api。
