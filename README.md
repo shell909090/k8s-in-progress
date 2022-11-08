@@ -15,11 +15,8 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 * calico: [calico CNI的安装，配置，和抓包](calico/README.md)。
 * sched: [调度测试](sched/README.md)。
 * deb: [基础镜像有关的东西](deb/)
-* api: 目录内都是k8s api访问的例子。
-  * ambassador.yaml: 两个containers，一个来自`luksa/kubectl-proxy`，一个是标准的debian。标准debian中，可使用curl访问本机8001端口，来访问k8s api而免去认证。具体参考`k8s in action`的`8.2.3`节。
-  * curl-env.sh: 如何使用标准的curl来直接访问k8s api。
-  * downward-pod.yaml: downward api的例子。
-* nfs: [nfs有关的部分](nfs/)。
+* api: [k8s api有关的东西](api/)
+* nfs: [nfs有关的部分](nfs/)
 * vol: [卷挂载有关的部分](vol/)
 * kubia: [k8s in action的示例资源](kubia/)
 * myapp: [myapp相关资源](myapp/)。myapp有版本无状态。
