@@ -1,3 +1,15 @@
+# nfs
+
+和nfs有关的部分。
+
+# 目录结构和作用解释
+
+* README.md: 本文档
+* kustomization.yaml: 按step 2和step 5要求创建的kustomize文件。
+* namespace.yaml: 按step 3要求创建的kustomize文件。
+* patch_nfs_details.yaml: 按step 4要求创建的kustomize文件。
+* 最后`kubectl kustomize`编译执行。
+
 # 搭建nfs
 
 基于一台debian虚拟机，安装nfs服务器
@@ -20,6 +32,6 @@
 
 # Kubernetes NFS Subdir External Provisioner
 
-使用一个nfs服务器，创建多个pv来支撑多个pvc的工具。文件参考`nfs-subdir-external-provisioner`目录。
+使用一个nfs服务器，创建多个pv来支撑多个pvc的工具。
 
 具体看[Kubernetes NFS Subdir External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner)。
