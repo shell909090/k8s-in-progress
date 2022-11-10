@@ -4,8 +4,8 @@ metadata:
   name: vol-nfs
 spec:
   containers:
-  - name: deb
-    image: debian
+  - name: ubt
+    image: ubuntu
     command:
       - /bin/sleep
     args:

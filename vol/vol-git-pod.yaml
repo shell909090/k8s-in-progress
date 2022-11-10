@@ -4,8 +4,8 @@ metadata:
   name: vol-git
 spec:
   containers:
-  - name: deb
-    image: debian
+  - name: ubt
+    image: ubuntu
     command:
       - /bin/sleep
     args:
@@ -16,5 +16,5 @@ spec:
   volumes:
   - name: srv
     gitRepo:
-      repository: https://github.com/shell909090/webserver.git
-      revision: master
+      repository: https://github.com/shell909090/k8s-in-progress.git
+      revision: main

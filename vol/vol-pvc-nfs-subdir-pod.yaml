@@ -4,8 +4,8 @@ metadata:
   name: vol-pvc-nfs-subdir
 spec:
   containers:
-  - name: deb
-    image: debian
+  - name: ubt
+    image: ubuntu
     command:
       - /bin/sleep
     args:
