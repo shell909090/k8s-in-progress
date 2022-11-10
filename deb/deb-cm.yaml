@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: apt
+  name: deb-apt
   namespace: default
 data:
   98proxy: |

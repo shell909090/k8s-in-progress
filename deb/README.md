@@ -5,8 +5,8 @@
 # 目录结构和作用解释
 
 * README.md: 本文档
-* apt: 里面放了两个基础文件，`proxy`和`sources.list`。允许动态升级系统。
-* apt-cm-create.sh: 使用apt目录生成对应configmap。
-* apt-cm.yaml: 所生成的configmap。
-* base-pod.yaml: 最基本的deb镜像定义的pod。
-* cm-pod.yaml: 使用configmap定义的pod，加载了动态升级功能。
+* deb: 里面放了两个基础文件，`proxy`和`sources.list`。允许debian动态升级系统。
+* create-deb-cm.sh: 使用deb目录生成对应configmap。
+* deb-cm.yaml: 所生成的configmap。
+* deb-pod.yaml: 最基本的deb镜像定义的pod。
+* deb-apt-pod.yaml: 使用configmap定义的pod，加载了动态升级功能。

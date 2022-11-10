@@ -11,15 +11,15 @@ spec:
     args:
       - "1000000"
     volumeMounts:
-    - name: apt
+    - name: deb-apt
       mountPath: /etc/apt/sources.list
       subPath: sources.list
       readOnly: true
-    - name: apt
+    - name: deb-apt
       mountPath: /etc/apt/apt.conf.d/98proxy
       subPath: 98proxy
       readOnly: true
   volumes:
-  - name: apt
+  - name: deb-apt
     configMap:
-      name: apt
+      name: deb-apt
