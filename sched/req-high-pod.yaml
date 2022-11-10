@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: deb-req-high
+  name: req-high
 spec:
   containers:
-  - name: deb
-    image: debian
+  - name: ubt
+    image: ubuntu
     command:
       - /bin/sleep
     args:
@@ -14,16 +14,3 @@ spec:
       requests:
         cpu: 1
         memory: 1000Mi
-    volumeMounts:
-    - name: apt
-      mountPath: /etc/apt/sources.list
-      subPath: sources.list
-      readOnly: true
-    - name: apt
-      mountPath: /etc/apt/apt.conf.d/98proxy
-      subPath: 98proxy
-      readOnly: true
-  volumes:
-  - name: apt
-    configMap:
-      name: apt
