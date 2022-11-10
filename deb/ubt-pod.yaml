@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubt
+spec:
+  containers:
+  - name: ubt
+    image: ubuntu
+    command:
+      - /bin/sleep
+    args:
+      - "1000000"
