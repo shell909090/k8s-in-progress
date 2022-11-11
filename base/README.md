@@ -2,7 +2,7 @@
 
 定义基础镜像。后续一系列实验镜像都是基于`debian:latest`。
 
-同时定义了基于`ubuntu:latest`的镜像。基于ubuntu的镜像不需要修改mirrors和proxy就可以很好的工作，而且体积也更小。xs
+同时定义了基于`ubuntu:latest`的镜像。基于ubuntu的镜像不需要修改mirrors和proxy就可以很好的工作，而且体积也更小。
 
 # 目录结构和作用解释
 

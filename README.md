@@ -11,6 +11,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
   * install-registry.md: [安装registry](doc/install-registry.md)
   * k8s.md: [k8s相关文档](doc/k8s.md)
   * k8s-in-minimum.md: [最小化的k8s](doc/k8s-in-minimum.md)
+  * node-failure.md: [node失效和迁移测试](doc/node-failure.md)
   * minikube.md: [minikube相关文档](doc/minikube.md)
 * calico: [calico CNI的安装，配置，和抓包](calico/)
 * base: [基础镜像有关的东西](base/)

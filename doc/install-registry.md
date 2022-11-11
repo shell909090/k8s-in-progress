@@ -1,3 +1,5 @@
+# 安装registry
+
 # 为什么需要私有registry
 
 快
