@@ -152,3 +152,13 @@ pod1                       node1                      node2                     
  <-dst:10.2.36.68       --
 ----------------------------------------------------------------------------------------------
 ```
+
+## networkpolicies找不到？
+
+这个是因为`networkpolicies`和系统资源重名。
+
+可以用`kubectl get crds -A`列出所有crd。然后用`kc get networkpolicies.crd.projectcalico.org -A`来访问。
+
+引用：
+
+1. [Kubernetes: cannot see network policies created with calico](https://stackoverflow.com/questions/72789084/kubernetes-cannot-see-network-policies-created-with-calico)
