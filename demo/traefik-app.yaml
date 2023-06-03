@@ -1,30 +1,44 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: traefik-dashboard
-  labels:
-    app: traefik
-spec:
-  type: NodePort
-  ports:
-    - port: 8080
-      targetPort: dashboard
-  selector:
-    app: traefik
----
-apiVersion: v1
-kind: Service
-metadata:
   name: traefik-web
   labels:
     app: traefik
 spec:
   type: NodePort
   ports:
-    - targetPort: web
-      port: 80
+  - name: web
+    targetPort: web
+    port: 80
+  - name: websecure
+    targetPort: websecure
+    port: 443
+  - name: dashboard
+    targetPort: dashboard
+    port: 8080
   selector:
     app: traefik
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: traefik
+  labels:
+    app: traefik
+data:
+  traefik.yaml: |
+    entryPoints:
+      web:
+        address: ":80"
+      websecure:
+        address: ":443"
+
+    api:
+      dashboard: true
+      insecure: true
+
+    providers:
+      kubernetesIngress: {}
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -44,13 +58,21 @@ spec:
     spec:
       serviceAccountName: traefik-account
       containers:
-        - name: traefik
-          image: traefik:v2.9
-          args:
-            - --api.insecure
-            - --providers.kubernetesingress
-          ports:
-            - name: web
-              containerPort: 80
-            - name: dashboard
-              containerPort: 8080
+      - name: traefik
+        image: traefik:v2.9
+        ports:
+        - name: web
+          containerPort: 80
+        - name: websecure
+          containerPort: 443
+        - name: dashboard
+          containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/traefik/traefik.yaml
+          subPath: traefik.yaml
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: traefik
