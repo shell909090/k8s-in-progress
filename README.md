@@ -24,3 +24,4 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
 * sched: [调度测试](sched/)
 * sec-ctx: [安全隔离有关的文件](sec-ctx/)
 * demo: [示例性项目](demo/)
+* ingress: [两个ingress配置](ingress/)
