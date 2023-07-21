@@ -19,8 +19,8 @@
    6. 安装包: `aptitude install -y jq git nfs-common net-tools iproute2`。可选。这是为了支持后面的多项实验。
    7. 安装kubectl, kubelet, kubeadm [5]。
       1. `aptitude install -y apt-transport-https ca-certificates curl`
-	  2. `curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg`
-      3. `echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list`
+      2. `curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg`
+	  3. `echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list`
 	  4. `aptitude install -y kubelet kubeadm kubectl`
    8. 打开`SystemdCgroup` [6]。具体配置见下。
       1. 重启containerd: `systemctl restart containerd`
