@@ -84,3 +84,26 @@ ETCDCTL_API=3 bin/etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/k
 metric server。部署后top开始工作，可以使用hpa。
 
 具体看[Kubernetes Metrics Server](https://github.com/kubernetes-sigs/metrics-server)。
+
+# 管理工具
+
+## kustomize
+
+基本思路是base yaml + patch。如果一个发布基本不怎么变，就小幅改变几个参数就能跑，那么kustomize非常适用。
+
+引用：
+
+1. [使用 Kustomize 对 Kubernetes 对象进行声明式管理](https://kubernetes.io/zh-cn/docs/tasks/manage-kubernetes-objects/kustomization/)
+
+## kapp
+
+管理app的工具。本质是把多种k8s资源归纳到一个app底下。app有关信息写configmap。
+
+deploy的时候有diff，很好用。
+
+deploy后的资源可以用ls列出，inspect查看，delete删除。
+
+引用
+
+1. [kapp](https://carvel.dev/kapp/)
+2. [用Carvel Kapp控制器管理Kubernetes中的应用](https://juejin.cn/post/7111199082651058189)
