@@ -1,8 +1,0 @@
-namespace/nfs-provisioner created
-storageclass.storage.k8s.io/nfs-client created
-serviceaccount/nfs-client-provisioner created
-role.rbac.authorization.k8s.io/leader-locking-nfs-client-provisioner created
-clusterrole.rbac.authorization.k8s.io/nfs-client-provisioner-runner created
-rolebinding.rbac.authorization.k8s.io/leader-locking-nfs-client-provisioner created
-clusterrolebinding.rbac.authorization.k8s.io/run-nfs-client-provisioner created
-deployment.apps/nfs-client-provisioner created

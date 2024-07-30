@@ -8,7 +8,7 @@
 * kustomization.yaml: 按step 2和step 5要求创建的kustomize文件。
 * namespace.yaml: 按step 3要求创建的kustomize文件。
 * patch_nfs_details.yaml: 按step 4要求创建的kustomize文件。
-* 最后`kubectl kustomize`编译执行。
+* 最后`kubectl kustomize`编译，`kubectl apply -k .`执行。
 
 # 搭建nfs
 

@@ -7,5 +7,5 @@ helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.git
 # traefik
 
 ```
-helm upgrade traefik -n traefik -f traefik-values.yaml .
+helm upgrade --install traefik traefik/traefik -n traefik --create-namespace
 ```
