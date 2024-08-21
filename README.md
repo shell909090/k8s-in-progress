@@ -14,6 +14,7 @@ k8s的学习和测试仓库，里面堆满了有用没用的东西。
   * node-failure.md: [node失效和迁移测试](doc/node-failure.md)
   * minikube.md: [minikube相关文档](doc/minikube.md)
 * calico: [calico CNI的安装，配置，和抓包](calico/)
+* cilium: [cilium的安装和简单测试](cilium/)
 * base: [基础镜像有关的东西](base/)
 * api: [k8s api有关的东西](api/)
 * nfs: [nfs有关的部分](nfs/)
